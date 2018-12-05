@@ -1,0 +1,177 @@
+concept_temp_idtf => nrel_system_idtf:[concept_temp_idtf];;
+concept_temp_idtf => nrel_main_idtf: [temp_name_ru](*<- lang_ru;;*); [temp_name_lat](*<- lang_lat;;*); [temp_name_bel](*<- lang_bel;;*);;
+concept_temp_idtf => nrel_idtf: [temp_name_bel](*<- lang_bel;;*);;
+
+concept_species -> concept_ temp_idtf;;
+subject_domain_of_plantae -> rrel_not_maximum_studied_object_class: concept_ temp_idtf;;
+
+concept_ temp_idtf  <- rrel_key_sc_element:...
+(*
+<-illustration;;
+=>nrel_main_idtf:
+[Рис. (temp_name_ru)](*<-lang_ru;;*);;
+<=nrel_sc_text_translation:...
+(*
+->"file://concept_temp_idtf.jpg"(*=>nrel_format:format_jpg;;*);;
+*);;
+*);;
+
+concept_species -> concept_temp_idtf;;
+subject_domain_of_aves -> rrel_not_maximum_studied_object_class: concept_temp_idtf;;
+nrel_upload_date -> ...
+	(*
+	-> rrel_1: Red_list;; 
+	-> rrel_2: concept_temp_idtf;;
+	-> rrel_3: ... (*-> rrel_number_of_year: temp_year (*<- number;;*);;*);;
+	*);;
+
+concept_temp_idtf <- rrel_key_sc_element:
+...
+(*
+<- explanation;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[temp_paragraph_0](* <- lang_ru;; *);;
+*);;
+*);
+...
+(*
+<- explanation;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[temp_paragraph_1](* <- lang_ru;; *);;
+*);;
+*);
+...
+(*
+<- explanation;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[temp_paragraph_2](* <- lang_ru;; *);;
+*);;
+*);
+...
+(*
+<- explanation;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[temp_paragraph_3](* <- lang_ru;; *);;
+*);;
+*);
+...
+(*
+<- explanation;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[temp_paragraph_4](* <- lang_ru;; *);;
+*);;
+*);
+...
+(*
+<- explanation;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[temp_paragraph_5](* <- lang_ru;; *);;
+*);;
+*);
+...
+(*
+<- explanation;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[temp_paragraph_6](*<- lang_ru;;*);;
+*);;
+*);
+...
+(*
+<- explanation;;
+<= nrel_sc_text_translation:
+...
+(*
+-> rrel_example:
+[temp_paragraph_7](*<- lang_ru;; *);;
+*);;
+*);;
+
+concept_temp_idtf <= nrel_spread: ... 
+(*
+    <= nrel_combination: ... 
+		(*
+		-> temp_distr;;
+		*);;
+*);;
+
+concept_temp_idtf => nrel_part: ...
+(*
+<= nrel_inclusion:: concept_stem; temp_part[0];;
+*);
+...
+(*
+<= nrel_inclusion:: concept_rhizome; temp_part[1] ;;
+*);
+...
+(*
+<= nrel_inclusion:: concept_leaf; temp_part[2];;
+*);
+...
+(*
+<= nrel_inclusion:: flower; temp_part[3];;
+*);
+...
+(*
+<= nrel_inclusion:: inflorscence; temp_part[4];;
+*);
+...
+(*
+<= nrel_inclusion:: fruit; temp_part[5];;
+*);;
+
+concept_temp_idtf <= nrel_inclusion: 
+[temp_length_stem[0]-temp_length_stem[1]]
+(*
+<- interval_value;;
+<- length_of_stem;;
+=> nrel_measurement: ([temp_length_stem[0] см] => [temp_length_stem[1] см]);; 
+*);
+
+concept_temp_idtf <= nrel_inclusion: 
+[temp_length_inf[0]-temp_length_inf[1] см]
+(*
+<- interval_value;;
+<- length_of_inflorscence;;
+=> nrel_measurement: ([temp_length_inf[0] см] => [temp_length_inf[1] см]);; 
+*);
+
+[temp_length_stem[0] см] <- length_of_inflorscence; exact_value;;
+[temp_length_stem[0] см] -> .centimeter: temp_length_stem[0] (* <- number;;*);;
+[temp_length_stem[1] см] <- length_of_inflorscence; exact_value;;
+[temp_length_stem[1] см] -> .centimeter: temp_length_stem[1] (* <- number;;*);;
+[temp_length_inf[0] см] <- length_of_inflorscence; exact_value;;
+[temp_length_inf[0] см] -> .centimeter: temp_length_inf[0] (* <- number;;*);;
+[temp_length_inf[1] см] <- length_of_inflorscence; exact_value;;
+[temp_length_inf[1] см] -> .centimeter: temp_length_inf[1] (* <- number;;*);;
+ 
+
+concept_temp_idtf <= nrel_inclusion: concept_temp_sec_cat_protection_category;;
+concept_temp_idtf <= nrel_strength: [temp_pop шт]
+(*
+<- value;;
+<= nrel_value: ...
+(*
+-> nrel_wm: temp_pop (* <- number;;*);;
+*);; 
+*);;
