@@ -167,11 +167,3 @@ concept_temp_idtf <= nrel_inclusion:
  
 
 concept_temp_idtf <= nrel_inclusion: concept_temp_sec_cat_protection_category;;
-concept_temp_idtf <= nrel_strength: [temp_pop шт]
-(*
-<- value;;
-<= nrel_value: ...
-(*
--> nrel_wm: temp_pop (* <- number;;*);;
-*);; 
-*);;
